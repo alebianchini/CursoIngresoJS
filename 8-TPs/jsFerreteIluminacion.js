@@ -19,9 +19,15 @@ function CalcularPrecio ()
 
     lamparas = parseInt(document.getElementById("Cantidad").value);
 
+    while( isNaN(lamparas) ){
+        lamparas = parseInt(prompt("Error. ingrese un número"));
+    
+    }
+    
     precio = lamparas * 35;
 
     marca = document.getElementById("Marca").value;
+
     
     if(lamparas > 5){
         
