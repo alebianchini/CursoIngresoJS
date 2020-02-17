@@ -10,5 +10,76 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	
+    var lamparas;
+    var precio;
+    var preciofinal;
+    var descuento;
+    var marca;
+    var impuesto;
+
+    lamparas = parseInt(document.getElementById("Cantidad").value);
+
+    precio = lamparas * 35;
+
+    marca = document.getElementById("Marca").value;
+    
+    if(lamparas > 5){
+        
+        descuento = (precio * 50) / 100;
+        preciofinal = precio - descuento;
+    }
+    else if(lamparas == 5){
+        switch( marca ){
+            case "ArgentinaLuz" :
+                descuento = (precio * 40) / 100;
+                preciofinal = precio - descuento;
+                break;
+
+            default :
+                descuento = (precio * 30) /100;
+                preciofinal = precio - descuento;
+        }
+    }
+    else if(lamparas == 4){
+        switch( marca ){
+            case "ArgentinaLuz" :
+            case "FelipeLamparas" :
+                descuento = (precio * 25) / 100;
+                preciofinal = precio - descuento;
+                break;
+            
+            default :
+                descuento = (precio * 20) / 100;
+                preciofinal = precio - descuento;
+        }
+    }
+    else if(lamparas == 3){
+        switch( marca ){
+            case "ArgentinaLuz" :
+                descuento = (precio * 15) / 100;
+                preciofinal = precio - descuento;
+                break;
+            
+            case "FelipeLamparas" :
+                descuento = (precio * 10) / 100;
+                preciofinal = precio - descuento;
+                break;
+
+            default :
+                descuento = (precio * 5) / 100;
+                preciofinal = precio - descuento;
+        }
+    }
+    else{
+        preciofinal = precio;
+    }
+    
+    if(preciofinal > 120){
+        impuesto = (preciofinal * 10) / 100;
+        preciofinal = (preciofinal + impuesto) + " (Usted pagó $" + impuesto + " de IIBB).";
+        
+    }
+    
+    
+    document.getElementById("precioDescuento").value = "$" + preciofinal;
 }
