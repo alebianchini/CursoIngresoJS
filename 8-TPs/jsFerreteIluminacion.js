@@ -19,8 +19,9 @@ function CalcularPrecio ()
 
     lamparas = parseInt(document.getElementById("Cantidad").value);
 
-    while( isNaN(lamparas) ){
+    while( isNaN(lamparas) || lamparas < 0 ){
         lamparas = parseInt(prompt("Error. ingrese un número"));
+        document.getElementById("Cantidad").value = lamparas;
     
     }
     
