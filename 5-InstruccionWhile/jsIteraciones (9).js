@@ -2,16 +2,29 @@ function mostrar()
 {
 
 	var contador=0;
-	// declarar variables
+	var numero;
+	var seguir;
 	
-	var respuesta='si';
 
-	while(respuesta!='no')
-	{
+	do{
+		numero = parseInt(prompt("Ingrese un número positivo o negativo"));
+
+		while( isNaN(numero)){
+			numero = parseInt(prompt("Error. Ingrese un número positivo o negativo"));
+		}
+
 		
-	
-	}
 
+
+
+
+
+
+
+
+		seguir = prompt("Quiere agregar otro número?");
+
+	} while( seguir == "s");
 
 
 
