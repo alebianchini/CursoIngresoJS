@@ -1,7 +1,7 @@
 function mostrar()
 {
 
-	var contador=0;
+	var flag = 0;
 	var numero;
 	var seguir;
 	var maximo;
@@ -16,15 +16,15 @@ function mostrar()
 		}
 
 		
-		if( contador == 0 || maximo < numero){
+		if( flag == 0 || maximo < numero){
 			
 			maximo = numero;
-			contador ++;
 		}
 		
-		if( contador == 1 || minimo > numero){
+		if( flag == 0 || minimo > numero){
 
 			minimo = numero;
+			flag = 1;
 		}
 
 
