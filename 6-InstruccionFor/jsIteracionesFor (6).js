@@ -18,7 +18,4 @@ function mostrar()
 
     document.write("La cantidad de números pares es: " + contadorPares);
     
-
-
-
 }//FIN DE LA FUNCIÓN
