@@ -2,6 +2,7 @@ function mostrar()
 {
     var numero;
     var letra;
+    var letras = "abcdefghijklmnñopkrstuvwxyz";
     var contadorPares = 0;
     var contadorImpares = 0;
     var contadorCeros = 0;
@@ -19,10 +20,12 @@ function mostrar()
 
     do{
         letra = prompt("Ingrese una letra.");
+        while (letras.indexOf(letra.toLowerCase()) == -1){
+            letra = prompt("Eso no es una letra. Ingrese una letra.");
+        } 
 
         numero = parseInt(prompt("Ingrese un numero entre -100 y 100."));
-
-        while(numero < -100 || numero > 100){
+        while(numero < -100 || numero > 100 || isNaN(numero)){
             numero = parseInt(prompt("Número no válido. Ingrese un numero entre -100 y 100."));
         }
 
