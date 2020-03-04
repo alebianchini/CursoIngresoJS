@@ -69,8 +69,10 @@ function mostrar()
         
     }while(seguir == 's');
 
+    if(contadorPositivos =! 0){
     promedio = acumuladorPositivos / contadorPositivos;
-
+    }
+    
     document.write("Cantidad de números pares: " + contadorPares + "</br>");
     document.write("Cantidad de números impares: " + contadorImpares + "</br>");
     document.write("Cantidad de ceros: " + contadorCeros + "</br>");
