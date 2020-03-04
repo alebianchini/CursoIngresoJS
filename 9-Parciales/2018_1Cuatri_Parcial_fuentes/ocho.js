@@ -2,7 +2,6 @@ function mostrar()
 {
     var numero;
     var letra;
-    var letras = "abcdefghijklmnñopkrstuvwxyz";
     var contadorPares = 0;
     var contadorImpares = 0;
     var contadorCeros = 0;
@@ -16,11 +15,13 @@ function mostrar()
     var letraMinima;
     var seguir;
     var flag = 0;
+    var letraMinMenor = "-";
+    var numMinMenor = "-";
 
 
     do{
         letra = prompt("Ingrese una letra.");
-        while (letras.indexOf(letra.toLowerCase()) == -1){
+        while (!((letra >= 'A' && letra <= 'Z') || (letra >= 'a' && letra <= 'z'))) {
             letra = prompt("Eso no es una letra. Ingrese una letra.");
         } 
 
@@ -29,22 +30,22 @@ function mostrar()
             numero = parseInt(prompt("Número no válido. Ingrese un numero entre -100 y 100."));
         }
 
-        if(numero == 0){
-            contadorCeros++;
-            contadorPares++;
-        }
-        else if(numero % 2 == 0){
+
+        if(numero % 2 == 0){
             contadorPares++;
         }
         else{
             contadorImpares++;
         }
 
-        if(numero > 0){
+        if(numero == 0){
+            contadorCeros++;
+        }
+        else if(numero > 0){
             acumuladorPositivos = acumuladorPositivos + numero;
             contadorPositivos++;
         }
-        else if(numero < 0){
+        else{
             acumuladorNegativos = acumuladorNegativos + numero;
         }
 
@@ -56,8 +57,13 @@ function mostrar()
             numMinimo = numero;
             letraMinima = letra;
             flag = 1;
-        }        
-              
+        }
+        if((letra >= 'a' && letra <= 'z') && (flag == 1 || numero < numMinMenor)){
+            numMinMenor = numero;
+            letraMinMenor = letra;
+            flag = 2;
+        }
+                      
 
         seguir = prompt("Quiere seguir ingresando datos?");
         
@@ -72,5 +78,23 @@ function mostrar()
     document.write("Suma de los números negativos: " + acumuladorNegativos + "</br>");
     document.write("Letra y número máximo: " + letraMaxima + " , " + numMaximo + "</br>");
     document.write("Letra y número mínimo: " + letraMinima + " , " + numMinimo + "</br>");
+    document.write("Letra y número minúscula mínimo: " + letraMinMenor + " , " + numMinMenor);
 
 }
+
+    //validador de letras Alex.
+/* var letras = "abcdefghijklmnñopkrstuvwxyz";
+
+    letra = prompt("Ingrese una letra.");
+        while (letras.indexOf(letra.toLowerCase()) == -1){
+            letra = prompt("Eso no es una letra. Ingrese una letra.");
+
+        //El punto G hecho por mi.
+            if(letra >='a' && letra <= 'z'){
+            if(numero < numMinMenor || flag == 1){
+            numMinMenor = numero;
+            letraMinMenor = letra;
+            flag = 2;
+            }
+        }
+*/
