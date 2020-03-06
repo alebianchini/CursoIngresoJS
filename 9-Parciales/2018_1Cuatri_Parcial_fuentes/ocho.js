@@ -8,7 +8,7 @@ function mostrar()
     var acumuladorPositivos = 0;
     var acumuladorNegativos = 0;
     var contadorPositivos = 0;
-    var promedio;
+    var promedio = 0;
     var numMaximo;
     var letraMaxima;
     var numMinimo;
